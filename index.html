@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhagyashree Portfolio</title>
+    <link rel="icon" href="https://t3.ftcdn.net/jpg/00/09/96/18/360_F_9961831_dQ63mOQbc46AftNVgbA4Zzs7JJjGjtKC.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+:root {
+  --ink: #2b2540; --muted: #6b6580; --accent: #6f4fb8; --rose: #e6a9bd;
+  --lilac: #ece6f8; --blush: #fbeef2; --line: rgba(111, 79, 184, 0.2);
+  --serif: "Outfit", "Segoe UI", system-ui, sans-serif;
+  --sans: "DM Sans", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body { font-family: var(--sans); color: var(--ink); line-height: 1.7; background: linear-gradient(160deg, var(--lilac) 0%, var(--blush) 60%, #f6efe9 100%) fixed; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+.top { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(10px); background: rgba(246, 240, 250, .8); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .8rem; padding-bottom: .8rem; }
+.brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+.top nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+.top nav a { color: var(--ink); text-decoration: none; font-size: .95rem; padding-bottom: 2px; border-bottom: 2px solid transparent; transition: border-color .2s; }
+.top nav a:hover { border-color: var(--rose); }
+
+.hero { display: grid; grid-template-columns: 1fr 260px; gap: 3rem; align-items: center; padding: 5rem 0 4rem; }
+.hero h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.1; letter-spacing: -.02em; }
+.role { margin: .6rem 0 1rem; font-size: 1.2rem; color: var(--accent); font-weight: 500; }
+.intro { max-width: 46ch; color: var(--muted); font-size: 1.1rem; }
+.actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.btn { padding: .65rem 1.4rem; border-radius: 999px; text-decoration: none; font-weight: 500; border: 1.5px solid var(--accent); transition: transform .2s, background .2s, color .2s; }
+.btn.solid { background: var(--accent); color: #fff; }
+.btn.line { color: var(--accent); }
+.btn:hover { transform: translateY(-2px); }
+.btn.line:hover { background: var(--accent); color: #fff; }
+.photo { position: relative; width: 240px; height: 240px; margin-left: auto; border-radius: 50%; overflow: hidden; border: 5px solid #fff; box-shadow: 0 14px 36px rgba(111, 79, 184, .22); background: linear-gradient(145deg, #d9ccf3, #f6c9d8); display: grid; place-items: center; font-family: var(--serif); font-size: 5.5rem; color: var(--accent); }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+.sec { display: grid; grid-template-columns: minmax(140px, 220px) 1fr; gap: 2rem; padding: 4rem 0; background: linear-gradient(90deg, var(--rose), transparent 70%) top / 100% 1px no-repeat; }
+.sec > h2 { font-family: var(--serif); font-weight: 500; font-size: 2rem; color: var(--accent); align-self: start; }
+.about { font-size: 1.15rem; line-height: 1.85; max-width: 56ch; }
+.group { margin-bottom: 1.8rem; }
+.group h3 { font-size: 1rem; font-weight: 600; margin-bottom: .6rem; }
+.group p { color: var(--muted); }
+abbr { text-decoration: underline dotted var(--accent); cursor: help; margin-right: 1rem; }
+
+.projects { list-style: none; }
+.projects li { border-bottom: 1px solid var(--line); }
+.projects a { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 0; color: var(--ink); text-decoration: none; font-family: var(--serif); font-size: clamp(1.2rem, 3vw, 1.6rem); transition: padding-left .25s, color .25s; }
+.projects a::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--rose); transition: background .25s; }
+.projects a:hover { padding-left: .8rem; color: var(--accent); }
+.projects a:hover::after { background: var(--accent); }
+
+.mail { font-family: var(--serif); font-size: clamp(1.2rem, 3.5vw, 1.6rem); word-break: break-word; }
+.phone { margin-top: .3rem; }
+.socials { display: flex; gap: .8rem; margin-top: 1.6rem; }
+.socials a { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; border: 1.5px solid var(--accent); color: var(--accent); transition: background .2s, color .2s, transform .2s; }
+.socials a:hover { background: var(--accent); color: #fff; transform: translateY(-3px); }
+.socials svg { width: 22px; height: 22px; fill: currentColor; }
+footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 1rem 1rem 3rem; }
+
+/* skill cards with the BorderGlow effect */
+.tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 1.4rem; padding: .4rem; }
+.glow-card {
+  --edge-proximity: 0; --cursor-angle: 45deg; --edge-sensitivity: 30; --color-sensitivity: calc(var(--edge-sensitivity) + 20);
+  --border-radius: 22px; --glow-padding: 36px; --cone-spread: 25; --fill-opacity: .5;
+  --card-bg: #fffafc; --c1: #b99cf2; --c2: #f4a6c0; --c3: #8ab4f8; --glow: 268deg 55% 62%;
+  --gradient-one: radial-gradient(at 80% 55%, var(--c1) 0px, transparent 50%);
+  --gradient-two: radial-gradient(at 69% 34%, var(--c2) 0px, transparent 50%);
+  --gradient-three: radial-gradient(at 8% 6%, var(--c3) 0px, transparent 50%);
+  --gradient-four: radial-gradient(at 41% 38%, var(--c1) 0px, transparent 50%);
+  --gradient-five: radial-gradient(at 86% 85%, var(--c2) 0px, transparent 50%);
+  --gradient-six: radial-gradient(at 82% 18%, var(--c3) 0px, transparent 50%);
+  --gradient-seven: radial-gradient(at 51% 4%, var(--c2) 0px, transparent 50%);
+  --gradient-base: linear-gradient(var(--c1) 0 100%);
+  position: relative; display: grid; isolation: isolate; transform: translate3d(0, 0, .01px);
+  border-radius: var(--border-radius); border: 1px solid var(--line); background: var(--card-bg);
+  box-shadow: rgb(24 24 27 / 4%) 0 1px 2px, rgb(24 24 27 / 5%) 0 8px 24px;
+}
+.glow-card::before, .glow-card::after, .glow-card > .edge-light {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -1; transition: opacity .25s ease-out;
+}
+.glow-card:not(:hover)::before, .glow-card:not(:hover)::after, .glow-card:not(:hover) > .edge-light { opacity: 0; transition: opacity .75s ease-in-out; }
+.glow-card::before {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--card-bg) 0 100%) padding-box, linear-gradient(rgb(255 255 255 / 0%) 0% 100%) border-box,
+    var(--gradient-one) border-box, var(--gradient-two) border-box, var(--gradient-three) border-box, var(--gradient-four) border-box,
+    var(--gradient-five) border-box, var(--gradient-six) border-box, var(--gradient-seven) border-box, var(--gradient-base) border-box;
+  opacity: calc((var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+  mask-image: conic-gradient(from var(--cursor-angle) at center, black calc(var(--cone-spread) * 1%), transparent calc((var(--cone-spread) + 15) * 1%), transparent calc((100 - var(--cone-spread) - 15) * 1%), black calc((100 - var(--cone-spread)) * 1%));
+}
+.glow-card::after {
+  border: 1px solid transparent;
+  background: var(--gradient-one) padding-box, var(--gradient-two) padding-box, var(--gradient-three) padding-box, var(--gradient-four) padding-box,
+    var(--gradient-five) padding-box, var(--gradient-six) padding-box, var(--gradient-seven) padding-box, var(--gradient-base) padding-box;
+  mask-image: linear-gradient(to bottom, black, black), radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%),
+    radial-gradient(ellipse at 66% 66%, black 5%, transparent 40%), radial-gradient(ellipse at 33% 33%, black 5%, transparent 40%),
+    radial-gradient(ellipse at 66% 33%, black 5%, transparent 40%), radial-gradient(ellipse at 33% 66%, black 5%, transparent 40%),
+    conic-gradient(from var(--cursor-angle) at center, transparent 5%, black 15%, black 85%, transparent 95%);
+  mask-composite: subtract, add, add, add, add, add;
+  opacity: calc(var(--fill-opacity) * (var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+}
+.glow-card > .edge-light {
+  inset: calc(var(--glow-padding) * -1); pointer-events: none; z-index: 1;
+  mask-image: conic-gradient(from var(--cursor-angle) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%);
+  opacity: calc((var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity)));
+}
+.glow-card > .edge-light::before {
+  content: ""; position: absolute; inset: var(--glow-padding); border-radius: inherit;
+  box-shadow: inset 0 0 0 1px hsl(var(--glow) / 100%), inset 0 0 1px 0 hsl(var(--glow) / 60%), inset 0 0 3px 0 hsl(var(--glow) / 50%),
+    inset 0 0 6px 0 hsl(var(--glow) / 40%), inset 0 0 15px 0 hsl(var(--glow) / 30%), inset 0 0 25px 2px hsl(var(--glow) / 20%),
+    0 0 1px 0 hsl(var(--glow) / 60%), 0 0 3px 0 hsl(var(--glow) / 50%), 0 0 6px 0 hsl(var(--glow) / 40%),
+    0 0 15px 0 hsl(var(--glow) / 30%), 0 0 25px 2px hsl(var(--glow) / 20%), 0 0 50px 2px hsl(var(--glow) / 10%);
+}
+.glow-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: .6rem; padding: 1.2rem .8rem; font-weight: 500; }
+.glow-inner .logo { width: 44px; height: 44px; }
+.glow-inner span { text-align: center; line-height: 1.3; }
+
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2rem; }
+.pills { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; }
+.pills li { display: flex; align-items: center; gap: .5rem; padding: .3rem 1rem .3rem .8rem; border: 1px solid var(--line); border-radius: 999px; background: rgba(255, 255, 255, .5); }
+.pills li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--rose); }
+.level { margin-bottom: 1rem; max-width: 420px; }
+.level-head { display: flex; justify-content: space-between; margin-bottom: .35rem; font-size: .95rem; }
+.level-head b { font-weight: 600; color: var(--accent); }
+.bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.bar i { height: 8px; border-radius: 999px; background: rgba(111, 79, 184, .14); }
+.bar i.on { background: var(--accent); }
+
+@media (max-width: 700px) {
+  .two { grid-template-columns: 1fr; }
+  .hero { grid-template-columns: 1fr; padding: 3rem 0; gap: 2rem; }
+  .photo { order: -1; margin: 0; width: 170px; height: 170px; font-size: 4rem; }
+  .sec { grid-template-columns: 1fr; gap: 1rem; padding: 3rem 0; }
+}
+    </style>
+</head>
+<body>
+    <header class="top">
+        <div class="wrap">
+            <a class="brand" href="#top">Bhagyashree</a>
+            <nav>
+                <a href="#about">About Me</a>
+                <a href="#skills">Skills</a>
+                <a href="#project">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap" id="top">
+        <section class="hero">
+            <div>
+                <h1>Hi, I'm Bhagyashree.</h1>
+                <p class="role">MCA graduate &middot; Python and web development</p>
+                <p class="intro">I build small web projects with Python, JavaScript and React, and I'm getting better at frontend development every week.</p>
+                <div class="actions">
+                    <a class="btn solid" href="Bhagyashree_resume.pdf" download="Bhagyashree_resume.pdf">Download resume</a>
+                    <a class="btn line" href="#contact">Contact me</a>
+                </div>
+            </div>
+            <div class="photo">B<img src="profile.jpg" alt="Photo of Bhagyashree" onerror="this.remove()"></div>
+        </section>
+
+        <section class="sec" id="about">
+            <h2>About Me</h2>
+            <p class="about">I am a passionate MCA graduate with an internship in Python and web development. I enjoy learning new technologies and
+                applying knowledge to real-world projects. I have experience working with Python, HTML, CSS, JavaScript and React.
+                I am a quick learner and always looking for new opportunities to improve my technical and communication skills.</p>
+        </section>
+
+        <section class="sec" id="skills">
+            <h2>Skills</h2>
+            <div>
+                <div class="group"><h3>Technical Skills</h3><div class="tech-grid"><div class="glow-card"><span class="edge-light"></span><div class="glow-inner"><svg class="logo" viewBox="0 0 24 24" fill="#3776AB" aria-hidden="true"><path d="m14.25.18.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></svg><span>Python</span></div></div><div class="glow-card"><span class="edge-light"></span><div class="glow-inner"><svg class="logo" viewBox="0 0 24 24" fill="#E34F26" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438zm7.031 9.75-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157z"/></svg><span>HTML</span></div></div><div class="glow-card"><span class="edge-light"></span><div class="glow-inner"><svg class="logo" viewBox="0 0 24 24" fill="#1572B6" aria-hidden="true"><path d="M0 0v20.16A3.84 3.84 0 0 0 3.84 24h16.32A3.84 3.84 0 0 0 24 20.16V3.84A3.84 3.84 0 0 0 20.16 0Zm14.256 13.08c1.56 0 2.28 1.08 2.304 2.64h-1.608c.024-.288-.048-.6-.144-.84-.096-.192-.288-.264-.552-.264-.456 0-.696.264-.696.84-.024.576.288.888.768 1.08.72.288 1.608.744 1.92 1.296q.432.648.432 1.656c0 1.608-.912 2.592-2.496 2.592-1.656 0-2.4-1.032-2.424-2.688h1.68c0 .792.264 1.176.792 1.176.264 0 .456-.072.552-.24.192-.312.24-1.176-.048-1.512-.312-.408-.912-.6-1.32-.816q-.828-.396-1.224-.936c-.24-.36-.36-.888-.36-1.536 0-1.44.936-2.472 2.424-2.448m5.4 0c1.584 0 2.304 1.08 2.328 2.64h-1.608c0-.288-.048-.6-.168-.84-.096-.192-.264-.264-.528-.264-.48 0-.72.264-.72.84s.288.888.792 1.08c.696.288 1.608.744 1.92 1.296.264.432.408.984.408 1.656.024 1.608-.888 2.592-2.472 2.592-1.68 0-2.424-1.056-2.448-2.688h1.68c0 .744.264 1.176.792 1.176.264 0 .456-.072.552-.24.216-.312.264-1.176-.048-1.512-.288-.408-.888-.6-1.32-.816-.552-.264-.96-.576-1.2-.936s-.36-.888-.36-1.536c-.024-1.44.912-2.472 2.4-2.448m-11.031.018c.711-.006 1.419.198 1.839.63.432.432.672 1.128.648 1.992H9.336c.024-.456-.096-.792-.432-.96-.312-.144-.768-.048-.888.24-.12.264-.192.576-.168.864v3.504c0 .744.264 1.128.768 1.128a.65.65 0 0 0 .552-.264c.168-.24.192-.552.168-.84h1.776c.096 1.632-.984 2.712-2.568 2.688-1.536 0-2.496-.864-2.472-2.472v-4.032c0-.816.24-1.44.696-1.848.432-.408 1.146-.624 1.857-.63"/></svg><span>CSS</span></div></div><div class="glow-card"><span class="edge-light"></span><div class="glow-inner"><svg class="logo" viewBox="0 0 24 24" fill="#F7DF1E" aria-hidden="true"><path d="M0 0h24v24H0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179z"/></svg><span>JavaScript</span></div></div><div class="glow-card"><span class="edge-light"></span><div class="glow-inner"><svg class="logo" viewBox="0 0 24 24" fill="#149ECA" aria-hidden="true"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236m2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38a2.17 2.17 0 0 0-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44a23.5 23.5 0 0 0-3.107-.534A24 24 0 0 0 12.769 4.7c1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442a23 23 0 0 0-3.113.538 15 15 0 0 1-.254-1.42c-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05q.684.704 1.36 1.564c-.44-.02-.89-.034-1.345-.034q-.691-.001-1.36.034c.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093q.61.874 1.183 1.86.557.961 1.018 1.946c-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87a25.6 25.6 0 0 1-4.412.005 27 27 0 0 1-1.183-1.86q-.557-.961-1.018-1.946a25 25 0 0 1 1.013-1.954c.38-.66.773-1.286 1.18-1.868A25 25 0 0 1 12 8.098zm-3.635.254c-.24.377-.48.763-.704 1.16q-.336.585-.635 1.174c-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0q1.044.153 2.006.387c-.18.632-.405 1.282-.66 1.933a25.952 25.952 0 0 0-1.345-2.32zm3.063.675q.727.226 1.375.498c1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493a24 24 0 0 0-1.1-2.98c.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98a23 23 0 0 0-1.086 2.964c-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474s1.12-1.742 2.852-2.476c.42-.18.88-.342 1.356-.494m11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39a26 26 0 0 0 1.341-2.338zm-9.945.02c.2.392.41.783.64 1.175q.345.586.705 1.143a22 22 0 0 1-2.006-.386c.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295a1.2 1.2 0 0 1-.553-.132c-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64q.661.032 1.345.034.691.001 1.36-.034c-.44.572-.895 1.095-1.345 1.565q-.684-.706-1.36-1.565"/></svg><span>React</span></div></div><div class="glow-card"><span class="edge-light"></span><div class="glow-inner"><svg class="logo" viewBox="0 0 24 24" fill="#6f4fb8" aria-hidden="true"><path d="M12 3C7.58 3 4 4.79 4 7s3.58 4 8 4 8-1.79 8-4-3.58-4-8-4M4 9v3c0 2.21 3.58 4 8 4s8-1.79 8-4V9c0 2.21-3.58 4-8 4s-8-1.79-8-4m0 5v3c0 2.21 3.58 4 8 4s8-1.79 8-4v-3c0 2.21-3.58 4-8 4s-8-1.79-8-4"/></svg><span>SQL</span></div></div></div></div>
+                <div class="group"><h3>Learning Goals</h3><div class="tech-grid"><div class="glow-card"><span class="edge-light"></span><div class="glow-inner"><svg class="logo" viewBox="0 0 24 24" fill="#6f4fb8" aria-hidden="true"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6z"/></svg><span>Advanced frontend</span></div></div><div class="glow-card"><span class="edge-light"></span><div class="glow-inner"><svg class="logo" viewBox="0 0 24 24" fill="#149ECA" aria-hidden="true"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236m2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38a2.17 2.17 0 0 0-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44a23.5 23.5 0 0 0-3.107-.534A24 24 0 0 0 12.769 4.7c1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442a23 23 0 0 0-3.113.538 15 15 0 0 1-.254-1.42c-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05q.684.704 1.36 1.564c-.44-.02-.89-.034-1.345-.034q-.691-.001-1.36.034c.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093q.61.874 1.183 1.86.557.961 1.018 1.946c-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87a25.6 25.6 0 0 1-4.412.005 27 27 0 0 1-1.183-1.86q-.557-.961-1.018-1.946a25 25 0 0 1 1.013-1.954c.38-.66.773-1.286 1.18-1.868A25 25 0 0 1 12 8.098zm-3.635.254c-.24.377-.48.763-.704 1.16q-.336.585-.635 1.174c-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0q1.044.153 2.006.387c-.18.632-.405 1.282-.66 1.933a25.952 25.952 0 0 0-1.345-2.32zm3.063.675q.727.226 1.375.498c1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493a24 24 0 0 0-1.1-2.98c.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98a23 23 0 0 0-1.086 2.964c-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474s1.12-1.742 2.852-2.476c.42-.18.88-.342 1.356-.494m11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39a26 26 0 0 0 1.341-2.338zm-9.945.02c.2.392.41.783.64 1.175q.345.586.705 1.143a22 22 0 0 1-2.006-.386c.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295a1.2 1.2 0 0 1-.553-.132c-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64q.661.032 1.345.034.691.001 1.36-.034c-.44.572-.895 1.095-1.345 1.565q-.684-.706-1.36-1.565"/></svg><span>React.js</span></div></div><div class="glow-card"><span class="edge-light"></span><div class="glow-inner"><svg class="logo" viewBox="0 0 24 24" fill="#2b2540" aria-hidden="true"><path d="M18.665 21.978A11.94 11.94 0 0 1 12 24C5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251zm-3.332-8.533 1.6 2.061V7.2h-1.6z"/></svg><span>Next.js</span></div></div><div class="glow-card"><span class="edge-light"></span><div class="glow-inner"><svg class="logo" viewBox="0 0 24 24" fill="#b0588a" aria-hidden="true"><path d="M17.5 15.5c0 1.11-.89 2-2 2s-2-.89-2-2 .9-2 2-2 2 .9 2 2m-9-2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.89 2-2-.89-2-2-2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2z"/></svg><span>AI in web development</span></div></div></div></div>
+                <div class="two">
+                    <div class="group"><h3>Soft Skills</h3><ul class="pills"><li>Communication</li><li>Problem solving</li><li>Team collaboration</li></ul></div>
+                    <div class="group"><h3>Languages Known</h3><ul class="pills"><li>English</li><li>Kannada</li><li>Hindi</li></ul></div>
+                </div>
+                <div class="group"><h3>Experience Level</h3><div class="level"><div class="level-head"><span>HTML / CSS</span><b>Beginner</b></div><div class="bar"><i class="on"></i><i></i><i></i></div></div><div class="level"><div class="level-head"><span>JavaScript and programming</span><b>Intermediate</b></div><div class="bar"><i class="on"></i><i class="on"></i><i></i></div></div></div>
+                <div class="group"><h3>Tech Glossary</h3>
+                    <p><abbr title="Hyper Text Markup Language">HTML</abbr><abbr title="Cascading Style Sheets">CSS</abbr><abbr title="Object Oriented Programming">OOPs</abbr></p></div>
+            </div>
+        </section>
+
+        <section class="sec" id="project">
+            <h2>Projects</h2>
+            <ul class="projects">
+                <li><a href="#">AI for Drug Discovery</a></li>
+                <li><a href="#">E-commerce Sales</a></li>
+                <li><a href="#">Online Food Delivery Application</a></li>
+            </ul>
+        </section>
+
+        <section class="sec" id="contact">
+            <h2>Contact</h2>
+            <div>
+                <a class="mail" href="mailto:bhagyashreedadgi11@gmail.com">bhagyashreedadgi11@gmail.com</a>
+                <p class="phone"><a href="tel:6757977899">6757977899</a></p>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/in/bhagyashree-dadgi-4b4771334/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                    </a>
+                    <a href="https://github.com/Bhagya-dadgi" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2c-3.34.73-4.03-1.6-4.03-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.22.7.82.58A12 12 0 0 0 12 .3z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/bhagya_291?stkn=MTIxYWh3MGNjN3lqZw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>&copy; Bhagyashree</footer>
+
+    <script>
+    document.querySelectorAll('.glow-card').forEach(function (card) {
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        var cx = r.width / 2, cy = r.height / 2;
+        var dx = e.clientX - r.left - cx, dy = e.clientY - r.top - cy;
+        var kx = dx !== 0 ? cx / Math.abs(dx) : Infinity;
+        var ky = dy !== 0 ? cy / Math.abs(dy) : Infinity;
+        var edge = Math.min(Math.max(1 / Math.min(kx, ky), 0), 1);
+        var angle = (dx === 0 && dy === 0) ? 0 : Math.atan2(dy, dx) * 180 / Math.PI + 90;
+        if (angle < 0) angle += 360;
+        card.style.setProperty('--edge-proximity', (edge * 100).toFixed(3));
+        card.style.setProperty('--cursor-angle', angle.toFixed(3) + 'deg');
+      });
+    });
+    </script>
+</body>
+</html>
